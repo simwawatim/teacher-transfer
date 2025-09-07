@@ -1,0 +1,55 @@
+### Register a Teacher
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "john..doe",
+  "password": "123456",
+  "role": "teacher",
+  "teacherData": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "tpin": "TPIN12345",
+    "currentSchool": "651a2f5d1f1f1a2b3c4d5e6f"
+  }
+}
+
+
+### Login User
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "john.doe",
+  "password": "123456"
+}
+
+
+### Create School
+POST http://localhost:4000/api/schools
+Content-Type: application/json
+
+{
+  "name": "Green Valley High",
+  "code": "GVH001",
+  "district": "Lusaka",
+  "province": "Lusaka Province"
+}
+
+### Get All Schools
+GET http://localhost:4000/api/schools
+
+### Get Single School
+GET http://localhost:4000/api/schools/68bcdf1bc2d54d93d13879cc
+
+### Update School
+PUT http://localhost:4000/api/schools/68bcdf1bc2d54d93d13879cc
+Content-Type: application/json
+
+{
+  "name": "Green Valley High School",
+  "district": "Lusaka Central"
+}
+
+### Delete School
+DELETE http://localhost:4000/api/schools/68bcdf1bc2d54d93d13879cc
